@@ -1,0 +1,30 @@
+ALGORITHM sentencesCount
+VAR
+   i:INTEGER
+   count_char:INTEGER:=0;
+   count_sentences:INTEGER :=1;
+   count_vowels:INTEGER :=0;
+   str:STRING
+   vowels:ARRAY of CHAR:=['a','e','i','u','o','A','E','I','U','O']
+BEGIN
+REPEAT
+     write("Enter Sentences in correct format");
+  read(str);
+UNTIL ((str.length>0) AND (str[str.length-1]=="."))
+FOR i FROM min TO str.length-1 STEP step  DO
+  count_char:= count_char +1 ;
+END_FOR
+FOR i FROM min TO str.length-1 STEP step  DO
+IF (str[i]==" ") THEN
+    count_sentences= count_sentences +1 ; 
+END_IF
+
+END_FOR
+
+FOR i FROM min TO str.length-1 STEP step  DO
+IF (str[i]in vowels) THEN
+   count_vowels:= count_vowels +1;
+END_IF
+
+END_FOR
+END
